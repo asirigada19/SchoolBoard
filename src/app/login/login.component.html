@@ -1,9 +1,31 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>School Board | Everything online</span>
+  </mat-toolbar-row>
+</mat-toolbar>
 <div style='text-align: center;'>
-  <h1>School Portal</h1>
+  <img src="/assets/logo.png" alt="logo">
+</div>
+<div class='login'>
+  <!-- <h1>School Portal</h1>
   <p>It allows you to see the status of the courses, student grades and attendance. </p>
   <p>Everything right in front you! Online.</p>
-  <p>One click login...</p> 
-  <button (click)="login()" mat-raised-button color="primary">Login</button>
+  <p>One click login...</p>  -->
+  <div class="login-triangle"></div>
+  
+  <h2 class="login-header">Log in</h2>
+  <form class="login-form">
+    <mat-form-field>
+      <input matInput placeholder="Username or email" value="">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="password" placeholder="password" value="">
+    </mat-form-field>
+    <button (click)="login()" mat-raised-button color="primary">Login</button>
+  </form>
+  <div style='text-align: center'>
+    asirigada's trademark &#169;
+  </div>
 </div>
 
 
