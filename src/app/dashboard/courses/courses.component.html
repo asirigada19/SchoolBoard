@@ -1,4 +1,24 @@
-<p>
-  Courses works!
-</p>
-<button mat-button>Basic</button>
+<h3 style='margin-left: 20px;'>Registered Courses</h3>
+<mat-accordion>
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>Mathematics</mat-panel-title>
+        <mat-panel-description>2 Assignments and 1 mid-term due </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>Instructor: Paul Mckney</p>
+      <p>New Posts: Nothing available</p>
+      <p>Attendance: 70%</p>
+      <p>Upcoming Events: Final exam on May 5th, 2019</p>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>Computer Science</mat-panel-title>
+        <mat-panel-description>No Assginments due</mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>Instructor: Kakarkai Tumbrey</p>
+      <p>New Posts: C, C++ workshop coming up. Please submit your names to the instructor.</p>
+      <p>Attendance: 95%</p>
+      <p>Upcoming Events: Final exam on May 10th, 2019</p>
+    </mat-expansion-panel>
+  </mat-accordion>
