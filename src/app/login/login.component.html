@@ -3,28 +3,22 @@
     <span>School Board | Everything online</span>
   </mat-toolbar-row>
 </mat-toolbar>
-<div style='text-align: center;'>
-  <img src="/assets/logo.png" alt="logo">
-</div>
 <div class='login'>
-  <!-- <h1>School Portal</h1>
-  <p>It allows you to see the status of the courses, student grades and attendance. </p>
-  <p>Everything right in front you! Online.</p>
-  <p>One click login...</p>  -->
   <div class="login-triangle"></div>
   
   <h2 class="login-header">Log in</h2>
-  <form class="login-form">
+  <form (submit)="login()" class="login-form">
+    <span *ngIf='invalidEntry' style='color: red; text-align: center'>Invalid credentials</span>
     <mat-form-field>
-      <input matInput placeholder="Username or email" value="">
+      <input matInput name='username' placeholder="Username or email" [(ngModel)]="username">
     </mat-form-field>
     <mat-form-field>
-      <input matInput type="password" placeholder="password" value="">
+      <input matInput type="password" name='password' placeholder="password" [(ngModel)]="password">
     </mat-form-field>
-    <button (click)="login()" mat-raised-button color="primary">Login</button>
+    <button type='submit' mat-raised-button color="primary">Login</button>
   </form>
   <div style='text-align: center'>
-    asirigada's trademark &#169;
+    copyrights &#169;
   </div>
 </div>
 
