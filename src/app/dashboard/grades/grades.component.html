@@ -1,4 +1,31 @@
-<mat-card class="home-profile-card">
+<table mat-table [dataSource]="transactions" class="mat-elevation-z8">
+  <!-- course Column -->
+  <ng-container matColumnDef="course">
+    <th mat-header-cell *matHeaderCellDef> Course </th>
+    <td mat-cell *matCellDef="let transaction"> {{transaction.course}} </td>
+    <td mat-footer-cell *matFooterCellDef> Total </td>
+  </ng-container>
+
+  <!-- Marks Column -->
+  <ng-container matColumnDef="marks">
+    <th mat-header-cell *matHeaderCellDef> Marks </th>
+    <td mat-cell *matCellDef="let transaction"> {{transaction.marks}} </td>
+    <td mat-footer-cell *matFooterCellDef> {{getTotalMarks()}} </td>
+  </ng-container>
+
+  <!-- Grade Column -->
+  <ng-container matColumnDef="grade">
+    <th mat-header-cell *matHeaderCellDef> Grade </th>
+    <td mat-cell *matCellDef="let transaction"> {{transaction.grade}} </td>
+    <td mat-footer-cell *matFooterCellDef> </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  <tr mat-footer-row *matFooterRowDef="displayedColumns"></tr>
+</table>
+
+<mat-card style='margin-top: 25px;'>
   <mat-card-header>
     <div mat-card-avatar>
       <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAnCAMAAABKdvqKAAACl1BMVEXZ3uDZ4+vy9vjz9/nY4ur0+PnX4enW4OjU3ubV3+fT3eXx9ffP2eH09/nz9/jw9PbR2+P0+PrW4OfW3N7Q2uLW3+fX4ejz9vja5OzY4enZ4urW3+bS3eXS2+Pq7/Lt8vXc5ezX3d/u8vXk6u/L1NzK09vR2N7O19/P2ODS3OT1+PrJ0tnU3eXv8/ba4unm7PDb5Ovd5ezO1tzX3uPu8/XS3OPV3+b1+frj6OzI0tnR2uLM1t3M1t7V3ePX4OfL1d3a4ujs8PPs8fTU2tzR2N/X3N7e5uzU3uXBy9LN1t3X4urV2tzY4unq7/PN19/f5uzL1Nva3+HG0NfZ4ujO2ODX4Ojv8/Xt8vTd5uzb5Oro7fHY4erCy9Lc5OzO2N/J0NbY3d/j6u/x9PfU3OTY4+rj6e3d5OrT3OPd5OnT3ubZ4unb4+ne5evr7/LY3uLe5OnV3OHx9fjT3OLEzdXz9vn2+vvR3OTK1Nvu8vTT3OTV4Ofw9ffv9PbY4+vN1t7J0dn3+vzr8PLh5+nm6+/V4Ojf5uu/yNDW3eHs8fPEzNK8xczm6u7c4eW9xs7X4unJ0djZ5Ozl6+/m6+7Q2eDW3uTo7O/Q197d4+nX3uLc5OrY3+bL09ra4eXX4OnI0Nfh5+rf5OjEzdPN1dzL1dzf5ej1+fvT3eTW3uXi6OzZ4OXW3OCzu8LP2eDH0NbEzdTQ2eHT3uXY4ejK09nr8PPW4enb4+rt8fTFztW5wsnFzNLi5+zd5evN197U3OHp7vLJ0NfJ09vO197V3ufh5+vDzdTAydDU3OLZ4ejv8vTu8/bW3OG8xs3J09rCy9O8xMvP2uLS2+Hn7PDY3+XQ2N/Z4+zY3+TT2+HM1NvQ2d/y9ffW3OLa4+nb4OHfYDa7AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4QgaExINBj2P+gAAAZlJREFUOMuN1MsrRFEcB/D7O+c4c+/MME/TyKNL0ZiZGkwaBlFInmFCzWK8UhYeKRtJsbFQShQWspB3KHv/go1slD9GM5nrHOZ33e/60+93Ouf3O4ris5QxpTtoKYPWoc8arFZ6rcGZPxCGbI0ag38haLPD66kJDcwhaF6SDaXpwIAJBHWzhOTTxVB4wG6o4ahLRWHA7SFCTsqgMATnqujI2jVDYPutBIv9vDBktWcSJBkbUrGzSXKuEAbbjyU4+YDBkR4JFr2gFeMSpP12DNbJcLQeu8dzKsJwBIOV49tCvZ3pkIY8YbT28gde3e9uIBce5PbXZaN5eMXJkLcOAiRPE0bri1KTebQ/uvKw5clmMuG8de970hL7bcxsFTKR70PSiBPMYOddvvXhEVoRmK3PIexCWhV28QcCf66hVJ5cGlM5/IKglTtklhugmHdLhlBRgOUOsDQAAmTqHEFC5zUBepuLMUgW/GBAcFahjngWuQF5B8UhnYrmYPYj5W9FOCQO93v2I/Xpup6KEweej2SDrlcrY72W8vkF2taZfD3mu50AAAAASUVORK5CYII=" alt="No pic">
@@ -7,13 +34,8 @@
     <mat-card-subtitle>002851372</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
-    <p>
-     Profile Info can be shown here. Coming soon...
-     Details like payment info, profile info, courses registered for, upcoming events etc..
-    </p>
+    <h3>Overall Percentage: 82%</h3>
+    <h4>Overall Grade: B+</h4>
+    <p>Additional Remarks: Can do better. Try to revise social stuides.</p>
   </mat-card-content>
 </mat-card>
-<div fxLayout="row" style="margin-top: 2px;">
-  <app-announcements fxFlex='70'></app-announcements>  
-  <app-library fxFlex></app-library>
-</div>

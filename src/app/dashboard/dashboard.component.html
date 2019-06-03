@@ -7,20 +7,23 @@
     <button (click)="logout()" mat-raised-button color="warn">logout</button>
   </mat-toolbar-row>
 </mat-toolbar>
-<h2>Welcome Ab...</h2>
-<mat-sidenav-container style='position: absolute; top: 130px; bottom: 0; left: 0; right: 0;'>
+<div class="dashboard-subheader" style='background: antiquewhite'>
+  <marquee style='color: red; font-size: 24px; font-weight: bold;'>School will remain closed on May 10th, 2019 | New: Final exam results posted</marquee>
+</div>
+
+<mat-sidenav-container style='position: absolute; top: 130px; bottom: 0; left: 0; right: 0; cursor: pointer;'>
   <mat-sidenav mode="side" opened>
     <mat-list>
       <mat-list-item routerLink="home">Home</mat-list-item>
       <mat-divider></mat-divider>
       <mat-list-item routerLink="courses">My Courses</mat-list-item>
       <mat-divider></mat-divider>
-      <mat-list-item>My Grades</mat-list-item>
+      <mat-list-item routerLink="grades">My Grades</mat-list-item>
       <mat-divider></mat-divider>
-      <mat-list-item>Financial Information</mat-list-item>
-      <mat-divider></mat-divider>
-      <mat-list-item>Contact Support</mat-list-item>
-      <mat-divider></mat-divider>
+      <!-- <mat-list-item>Financial Information</mat-list-item>
+      <mat-divider></mat-divider> -->
+      <!-- <mat-list-item>Contact Support</mat-list-item>
+      <mat-divider></mat-divider> -->
       </mat-list>
   </mat-sidenav>
   <mat-sidenav-content>
